@@ -31,9 +31,6 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<Users> createUser(@RequestBody Users user) {
-    	user.setUsername("emmanuel ugbem");
-    	user.setEmail("ugbememmanuel@gmail.com");
-    	user.setPassword("emmydavii");
         Users savedUser = userRepository.save(user);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
